@@ -11,8 +11,14 @@ pyvenv.cfg
 .venv
 pip-selfcheck.json
 
+# tox working folder
+.tox
+
 # Django
 *.log
 *.pyc
 __pycache__/
 db.sqlite3
+
+# packaging
+*.egg-info
