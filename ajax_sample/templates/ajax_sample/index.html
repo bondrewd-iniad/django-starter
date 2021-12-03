@@ -4,13 +4,15 @@
 <head>
     <title>Template</title>
     <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ajax_sample/css/index.css' %}">
 </head>
 
 <body>
     <h1>{{title}}</h1>
     <ul id="forecasts">
         {% for item in forecasts %}
-        <li>Day {{forloop.counter}}: {{item.type}}
+        <li>Day {{forloop.counter}}: <span class="sample">{{item.type}}</span>
             <img src="{{item.src}}" alt="{{item.alt}}">
         </li>
         {% endfor %}
@@ -19,7 +21,6 @@
         <input id="days" type="number" min="1" step="1" value="7">
         <button type="submit">UPDATE</button>
     </form>
-    {% load static %}
     <script type="text/javascript" src="{% static 'ajax_sample/js/jquery-3.3.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'ajax_sample/js/index.js' %}?{% now 'U' %}"></script>
 </body>
