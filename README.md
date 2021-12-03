@@ -27,7 +27,7 @@ Ctrl + C
 $ python manage.py startapp <app_name>
 ```
 
-`config/settings.py` の `INSTALLED_APPS` 配列に `'<app_name>',` を追記
+`config/settings.py` の `INSTALLED_APPS` 配列に `"<app_name>",` を追記
 
 # パッケージインストール後
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>Template</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>{{title}}</h1>
+    <ul id="forecasts">
+        {% for item in forecasts %}
+        <li>Day {{forloop.counter}}: {{item.type}}
+            <img src="{{item.src}}" alt="{{item.alt}}">
+        </li>
+        {% endfor %}
+    </ul>
+    <form id="update">
+        <input id="days" type="number" min="1" step="1" value="7">
+        <button type="submit">UPDATE</button>
+    </form>
+    {% load static %}
+    <script type="text/javascript" src="{% static 'ajax_sample/js/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ajax_sample/js/index.js' %}?{% now 'U' %}"></script>
+</body>
+
+</html>
